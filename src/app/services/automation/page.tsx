@@ -1,78 +1,78 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Globe, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Zap, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Footer } from "@/components/layout/Footer";
 import { SubpageCaseStudyCarousel } from "@/components/home/SubpageCaseStudyCarousel";
 
 export const metadata: Metadata = {
-  title: "Web Development",
-  description: "Custom web applications, SaaS platforms, e-commerce, and progressive web apps built with modern stacks.",
+  title: "Automation",
+  description: "Business process automation, workflow orchestration, and no-code/custom integration pipelines that eliminate manual work.",
 };
 
 const deliverables = [
-  "Custom SaaS platforms and multi-tenant web applications",
-  "E-commerce storefronts with payment gateway integration",
-  "Progressive Web Apps (PWAs) with offline capability",
-  "Internal tools, dashboards, and admin portals",
-  "RESTful and GraphQL APIs with documentation",
-  "CMS-powered marketing sites and landing pages",
-  "Real-time apps with WebSocket support (chat, notifications, live data)",
-  "Web portals with role-based access control",
+  "End-to-end business process automation (onboarding, billing, reporting)",
+  "CRM and ERP integrations (Salesforce, HubSpot, Zoho, SAP)",
+  "Custom webhook pipelines and event-driven architectures",
+  "Scheduled data sync and ETL pipelines between platforms",
+  "Document generation, e-signature workflows, and approval chains",
+  "Email and WhatsApp automation with conditional logic",
+  "No-code workflow builders (n8n, Make, Zapier) for non-technical teams",
+  "Internal automation dashboards with run history and error alerting",
 ];
 
 const stack = [
-  { name: "Next.js", color: "#000" },
-  { name: "React", color: "#61DAFB" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "Node.js", color: "#339933" },
+  { name: "n8n", color: "#EA4B71" },
+  { name: "Make", color: "#6D00CC" },
+  { name: "Zapier", color: "#FF4A00" },
+  { name: "Python", color: "#3776AB" },
   { name: "FastAPI", color: "#009688" },
-  { name: "PostgreSQL", color: "#336791" },
-  { name: "MongoDB", color: "#47A248" },
+  { name: "Celery", color: "#37814A" },
   { name: "Redis", color: "#DC382D" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "AWS", color: "#FF9900" },
-  { name: "Vercel", color: "#000" },
-  { name: "Docker", color: "#2496ED" },
+  { name: "PostgreSQL", color: "#336791" },
+  { name: "Temporal", color: "#141414" },
+  { name: "AWS Lambda", color: "#FF9900" },
+  { name: "Webhooks", color: "#6366F1" },
+  { name: "Resend", color: "#000" },
 ];
 
 const caseStudies = [
   {
-    title: "Clearpath — Construction SaaS",
-    desc: "Multi-tenant SaaS platform for construction project management with AI document processing, real-time notifications, and role-based dashboards for admins, site managers, and clients.",
-    tags: ["Next.js", "FastAPI", "PostgreSQL", "AWS"],
+    title: "FinTrack — Automated Bookkeeping Pipeline",
+    desc: "An automation pipeline that pulls bank transactions daily, categorises expenses using a fine-tuned classifier, reconciles against invoices in Zoho, and generates weekly P&L summaries — fully hands-free.",
+    tags: ["Python", "Celery", "Redis", "Zoho API"],
   },
   {
-    title: "Skillship — EdTech Platform",
-    desc: "Full-featured learning management system with course creation, student progress tracking, live cohort sessions, and Razorpay-powered enrollment flow.",
-    tags: ["Next.js", "Node.js", "MongoDB", "Razorpay"],
+    title: "HireFlow — Recruitment Workflow Automation",
+    desc: "An n8n-based workflow that routes applications from LinkedIn and job boards, sends personalised acknowledgement emails, schedules interviews via Calendly, and updates the ATS record at each stage.",
+    tags: ["n8n", "Calendly API", "Gmail", "PostgreSQL"],
   },
 ];
 
 const faqs = [
   {
-    q: "How long does a typical web application take to build?",
-    a: "A simple web app takes 3–6 weeks. A full SaaS platform with auth, billing, and dashboards typically takes 8–16 weeks depending on feature scope. We scope everything before we write a single line of code.",
+    q: "What's the difference between no-code automation and custom automation?",
+    a: "No-code tools like n8n, Make, or Zapier are fast to set up and great for simple linear workflows. Custom automation (Python scripts, Celery workers, Temporal workflows) handles complex logic, high volumes, retries, and error recovery that no-code tools can't reliably manage. We recommend the right approach for your scale.",
   },
   {
-    q: "Do you handle both frontend and backend?",
-    a: "Yes — always. We build the full stack: UI, APIs, database schema, deployment, and DevOps. No partial handoffs.",
+    q: "Which systems can you integrate?",
+    a: "Anything with an API — CRMs, ERPs, payment gateways, communication tools (Slack, WhatsApp, email), cloud storage, databases, and custom internal systems. If it has a webhook or REST API, we can connect it.",
   },
   {
-    q: "Which tech stack do you use for web development?",
-    a: "Our default stack is Next.js + TypeScript on the frontend, and Node.js or FastAPI on the backend, with PostgreSQL or MongoDB. We adjust based on your scale and requirements.",
+    q: "How do you handle failures in automated workflows?",
+    a: "Every automation we build includes retry logic, dead-letter queues for failed tasks, error alerting (Slack/email), and a run history dashboard so you can see exactly what ran, when, and why it failed.",
   },
   {
-    q: "Can you redesign or rebuild an existing product?",
-    a: "Yes. We regularly take over legacy codebases for rewrites or incremental modernisation. We audit the existing system first, then propose a migration path.",
+    q: "Can automation replace a team member?",
+    a: "In many cases, yes — for repetitive, rule-based work. Our automations have replaced manual data entry, report generation, follow-up emails, and invoice reconciliation for clients. We scope the ROI before we build.",
   },
   {
-    q: "Will I own the code after delivery?",
-    a: "Completely. You receive 100% of the source code, design files, and deployment credentials. We transfer all assets upon final payment milestone.",
+    q: "How long does a typical automation project take?",
+    a: "A single workflow (e.g., lead routing or invoice generation) takes 1–2 weeks. A full process automation suite covering multiple business functions takes 4–8 weeks.",
   },
 ];
 
-export default function WebDevelopmentPage() {
+export default function AutomationPage() {
   return (
     <>
       {/* Hero */}
@@ -81,25 +81,25 @@ export default function WebDevelopmentPage() {
           <div className="max-w-3xl">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-xs font-medium text-muted-foreground mb-5">
-                <Globe size={12} className="text-primary" />
-                Web Development
+                <Zap size={12} className="text-primary" />
+                Automation
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.05}>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight text-foreground mb-5 md:mb-7">
-                Web apps that{" "}
-                <span className="gradient-text">scale with you</span>
+                Automate the work{" "}
+                <span className="gradient-text">nobody wants to do</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-7 md:mb-10">
-                From MVPs to enterprise SaaS — we build performant, secure, production-ready web applications your users will actually enjoy using.
+                Business process automation that actually runs in production — with retries, error handling, and dashboards. Not just a Zap that breaks silently at 2am.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg gradient-bg text-white text-sm font-medium hover:opacity-90 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.97] transition-all">
-                  Discuss Your Project <ArrowRight size={15} />
+                  Discuss Your Workflow <ArrowRight size={15} />
                 </Link>
                 <Link href="/work" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary/50 hover:border-primary/30 active:scale-[0.97] transition-all">
                   See Our Work
@@ -108,7 +108,6 @@ export default function WebDevelopmentPage() {
             </ScrollReveal>
           </div>
         </div>
-        {/* Background gradient orb */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" aria-hidden="true" />
       </section>
 
@@ -117,17 +116,17 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">What It Is</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Full-stack web development, end to end</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Workflows that run themselves</h2>
           </ScrollReveal>
           <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
             <ScrollReveal delay={0.05}>
               <p>
-                Web development at amfire means owning the entire product surface — from the pixel-perfect UI your users interact with, to the APIs and databases that power it, to the cloud infrastructure it runs on. We don't hand off backend work to a third party or leave you hunting for a DevOps engineer after launch.
+                Automation at amfire means connecting your business systems — CRMs, databases, communication tools, payment gateways — and making them talk to each other without a human in the middle. We map your current manual processes, identify the bottlenecks, and replace them with reliable, observable workflows.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p>
-                We specialise in building products that start lean and grow gracefully. Whether that's a two-week MVP to test market demand, or a multi-tenant SaaS platform serving thousands of concurrent users — the architecture we choose on day one is designed to support where you're going, not just where you are today.
+                We pick the right tool for the job: n8n or Make for fast visual workflows, Python and Celery for high-volume or complex logic, and Temporal for long-running multi-step processes that need guaranteed execution. Every automation is monitored, alerting you before a problem becomes a crisis.
               </p>
             </ScrollReveal>
           </div>
@@ -160,12 +159,12 @@ export default function WebDevelopmentPage() {
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">Decode the Stack</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Technologies we use</h2>
-            <p className="text-sm text-muted-foreground mb-8">Hover a tag to learn what it does in your stack.</p>
+            <p className="text-sm text-muted-foreground mb-8">Tools that power your automated workflows.</p>
           </ScrollReveal>
           <div className="flex flex-wrap gap-3">
             {stack.map((tech, i) => (
               <ScrollReveal key={tech.name} delay={i * 0.03}>
-                <span className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-primary/40 hover:bg-secondary/50 transition-all cursor-default">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-primary/40 hover:bg-secondary/50 transition-all cursor-default">
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: tech.color }} />
                   {tech.name}
                 </span>
@@ -180,7 +179,7 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">Case Studies</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8">Web apps we've shipped</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8">Automations we've shipped</h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {caseStudies.map((cs, i) => (
@@ -232,10 +231,10 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to build your web app?
+              Ready to automate your operations?
             </h2>
             <p className="text-muted-foreground text-sm md:text-base mb-8 max-w-lg mx-auto">
-              Tell us what you're building — we'll scope it, price it, and start within a week.
+              Tell us which manual process costs you the most time — we'll map the workflow and estimate the build within 48 hours.
             </p>
             <Link
               href="/contact"

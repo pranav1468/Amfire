@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { SimpleCardsCarouselDesktop } from "@/components/home/SimpleCardsCarouselDesktop";
 import {
   Globe, Monitor, Code2, Palette, ShoppingCart, Plug,
   Smartphone, Bot, Brain, MessageSquare, FileSearch, Sparkles,
@@ -224,18 +225,30 @@ export default function ServicesPage() {
                 {category.title}
               </h2>
             </ScrollReveal>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Mobile: static grid */}
+            <div className="md:hidden grid grid-cols-1 gap-4">
               {category.items.map((service, i) => (
-                <ScrollReveal key={service.title} delay={i * 0.06}>
-                  <div className="group p-7 rounded-xl border border-border bg-card hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 h-full active:scale-[0.98]">
-                    <div className="w-10 h-10 rounded-lg gradient-bg flex items-center justify-center mb-4">
-                      <service.icon size={20} className="text-white" />
+                <ScrollReveal key={service.title} delay={i * 0.05}>
+                  <div className="p-5 rounded-xl border border-border bg-card h-full flex flex-col gap-3">
+                    <div className="w-9 h-9 rounded-lg gradient-bg flex items-center justify-center shrink-0">
+                      <service.icon size={18} className="text-white" />
                     </div>
-                    <h3 className="text-base font-semibold text-foreground mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+                    <h3 className="text-sm font-semibold text-foreground">{service.title}</h3>
+                    <p className="text-muted-foreground text-xs leading-relaxed">{service.description}</p>
                   </div>
                 </ScrollReveal>
               ))}
+            </div>
+
+            {/* Desktop: 3-card auto-scrolling carousel */}
+            <div className="hidden md:block">
+              <SimpleCardsCarouselDesktop
+                cards={category.items.map((s) => ({
+                  icon: <s.icon size={20} className="text-white" />,
+                  title: s.title,
+                  description: s.description,
+                }))}
+              />
             </div>
           </div>
         </section>

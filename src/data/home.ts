@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import type {
-  Stat, ServiceItem, Differentiator, ProcessStep, IndustryItem, Testimonial,
+  Stat, ServiceItem, Differentiator, ProcessStep, IndustryItem, Testimonial, CaseStudy,
 } from "@/types";
 
 /* ── Hero stats strip ───────────────────────────────────────────────── */
@@ -150,6 +150,41 @@ export const industries: IndustryItem[] = [
     name: "Startups & SaaS",
     href: "/industries/saas",
     useCases: ["MVP builds", "Multi-tenant SaaS", "AI feature sprints"],
+  },
+];
+
+/* ── Case Studies ───────────────────────────────────────────────────── */
+
+export const caseStudies: CaseStudy[] = [
+  {
+    tag: "SaaS Platform · AI",
+    title: "Clearpath — Construction SaaS with AI document processing",
+    description:
+      "A multi-tenant SaaS platform for construction firms to manage projects, contracts, and compliance — with an AI layer that reads and summarises permit documents automatically.",
+    stack: ["Next.js", "FastAPI", "PostgreSQL", "GPT-4o", "AWS"],
+    href: "/work",
+    metric: "Delivered in 10 weeks",
+    visual: { widths: [85, 65, 92, 78], label: "Clearpath dashboard" },
+  },
+  {
+    tag: "EdTech · AI Tutor",
+    title: "Skillship — AI-powered learning platform for professional upskilling",
+    description:
+      "An adaptive LMS with AI tutoring, personalised learning paths, and automated assessments — reducing dropout by 40% and improving course completion rates to 78%.",
+    stack: ["Next.js", "Python", "LangChain", "pgvector", "Vercel"],
+    href: "/work",
+    metric: "78% course completion rate",
+    visual: { widths: [72, 88, 60, 95], label: "Skillship dashboard" },
+  },
+  {
+    tag: "Mobile · Automation",
+    title: "FieldForce — Operations platform for distributed field teams",
+    description:
+      "A React Native mobile app with a WhatsApp automation layer for real-time job dispatch, timesheet capture, and invoice generation — saving 15+ hours per team per week.",
+    stack: ["React Native", "FastAPI", "PostgreSQL", "n8n", "AWS"],
+    href: "/work",
+    metric: "15 hrs/week saved per team",
+    visual: { widths: [90, 55, 80, 70], label: "FieldForce app" },
   },
 ];
 

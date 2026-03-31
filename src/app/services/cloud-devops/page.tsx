@@ -1,78 +1,78 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Globe, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Cloud, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Footer } from "@/components/layout/Footer";
 import { SubpageCaseStudyCarousel } from "@/components/home/SubpageCaseStudyCarousel";
 
 export const metadata: Metadata = {
-  title: "Web Development",
-  description: "Custom web applications, SaaS platforms, e-commerce, and progressive web apps built with modern stacks.",
+  title: "Cloud & DevOps",
+  description: "Cloud infrastructure, CI/CD pipelines, containerisation, and DevOps automation for reliable, scalable deployments.",
 };
 
 const deliverables = [
-  "Custom SaaS platforms and multi-tenant web applications",
-  "E-commerce storefronts with payment gateway integration",
-  "Progressive Web Apps (PWAs) with offline capability",
-  "Internal tools, dashboards, and admin portals",
-  "RESTful and GraphQL APIs with documentation",
-  "CMS-powered marketing sites and landing pages",
-  "Real-time apps with WebSocket support (chat, notifications, live data)",
-  "Web portals with role-based access control",
+  "Cloud architecture design and setup (AWS, GCP, Azure)",
+  "Containerisation with Docker and orchestration with Kubernetes",
+  "CI/CD pipelines with GitHub Actions, GitLab CI, or CircleCI",
+  "Infrastructure as Code with Terraform and AWS CDK",
+  "Monitoring, alerting, and observability (Grafana, Datadog, Sentry)",
+  "Auto-scaling, load balancing, and zero-downtime deployments",
+  "Database backups, disaster recovery, and failover strategies",
+  "Security hardening — IAM policies, secrets management, VPC setup",
 ];
 
 const stack = [
-  { name: "Next.js", color: "#000" },
-  { name: "React", color: "#61DAFB" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "Node.js", color: "#339933" },
-  { name: "FastAPI", color: "#009688" },
-  { name: "PostgreSQL", color: "#336791" },
-  { name: "MongoDB", color: "#47A248" },
-  { name: "Redis", color: "#DC382D" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
   { name: "AWS", color: "#FF9900" },
-  { name: "Vercel", color: "#000" },
+  { name: "GCP", color: "#4285F4" },
+  { name: "Azure", color: "#0078D4" },
   { name: "Docker", color: "#2496ED" },
+  { name: "Kubernetes", color: "#326CE5" },
+  { name: "Terraform", color: "#7B42BC" },
+  { name: "GitHub Actions", color: "#2088FF" },
+  { name: "Nginx", color: "#009639" },
+  { name: "Grafana", color: "#F46800" },
+  { name: "Datadog", color: "#632CA6" },
+  { name: "Sentry", color: "#362D59" },
+  { name: "Vercel", color: "#000" },
 ];
 
 const caseStudies = [
   {
-    title: "Clearpath — Construction SaaS",
-    desc: "Multi-tenant SaaS platform for construction project management with AI document processing, real-time notifications, and role-based dashboards for admins, site managers, and clients.",
-    tags: ["Next.js", "FastAPI", "PostgreSQL", "AWS"],
+    title: "Clearpath — Multi-Region AWS Infrastructure",
+    desc: "Designed and deployed a multi-region AWS architecture for a construction SaaS — RDS with read replicas, ElastiCache, S3 with CloudFront CDN, and a GitHub Actions CI/CD pipeline with automated staging + production deployments.",
+    tags: ["AWS", "Docker", "GitHub Actions", "Terraform"],
   },
   {
-    title: "Skillship — EdTech Platform",
-    desc: "Full-featured learning management system with course creation, student progress tracking, live cohort sessions, and Razorpay-powered enrollment flow.",
-    tags: ["Next.js", "Node.js", "MongoDB", "Razorpay"],
+    title: "FieldForce — Zero-Downtime Kubernetes Migration",
+    desc: "Migrated a monolithic Express API to a containerised microservices architecture on EKS, implementing blue-green deployments, HPA autoscaling, and Datadog observability with sub-100ms alert response.",
+    tags: ["Kubernetes", "AWS EKS", "Datadog", "Helm"],
   },
 ];
 
 const faqs = [
   {
-    q: "How long does a typical web application take to build?",
-    a: "A simple web app takes 3–6 weeks. A full SaaS platform with auth, billing, and dashboards typically takes 8–16 weeks depending on feature scope. We scope everything before we write a single line of code.",
+    q: "Which cloud provider do you recommend?",
+    a: "AWS for most products — it has the broadest service coverage, the largest ecosystem, and the best support for startups (AWS Activate credits). GCP is excellent for AI/ML-heavy workloads. Azure for teams already in the Microsoft ecosystem. We're cloud-agnostic and will recommend based on your use case.",
   },
   {
-    q: "Do you handle both frontend and backend?",
-    a: "Yes — always. We build the full stack: UI, APIs, database schema, deployment, and DevOps. No partial handoffs.",
+    q: "Can you set up DevOps for an existing product?",
+    a: "Yes. Most of our DevOps engagements are with teams that already have a product but are deploying manually, have no CI/CD, or are experiencing scaling issues. We audit the current setup and implement what's missing.",
   },
   {
-    q: "Which tech stack do you use for web development?",
-    a: "Our default stack is Next.js + TypeScript on the frontend, and Node.js or FastAPI on the backend, with PostgreSQL or MongoDB. We adjust based on your scale and requirements.",
+    q: "What does a CI/CD pipeline give us?",
+    a: "Automated testing on every PR, consistent builds without environment differences, one-click deployments to staging and production, and rollback capability if something goes wrong. It eliminates the 'it works on my machine' problem entirely.",
   },
   {
-    q: "Can you redesign or rebuild an existing product?",
-    a: "Yes. We regularly take over legacy codebases for rewrites or incremental modernisation. We audit the existing system first, then propose a migration path.",
+    q: "How do you handle secrets and API keys securely?",
+    a: "We use AWS Secrets Manager or HashiCorp Vault for secret storage, IAM roles for service-to-service auth (no hardcoded keys), and strict environment separation. Secrets never touch your repository.",
   },
   {
-    q: "Will I own the code after delivery?",
-    a: "Completely. You receive 100% of the source code, design files, and deployment credentials. We transfer all assets upon final payment milestone.",
+    q: "Do you offer ongoing infrastructure management?",
+    a: "Yes — we offer monthly retainer engagements for infrastructure monitoring, cost optimisation, security patching, and on-call support. Most clients start with a project engagement and move to a retainer post-launch.",
   },
 ];
 
-export default function WebDevelopmentPage() {
+export default function CloudDevOpsPage() {
   return (
     <>
       {/* Hero */}
@@ -81,25 +81,25 @@ export default function WebDevelopmentPage() {
           <div className="max-w-3xl">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-xs font-medium text-muted-foreground mb-5">
-                <Globe size={12} className="text-primary" />
-                Web Development
+                <Cloud size={12} className="text-primary" />
+                Cloud & DevOps
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.05}>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight text-foreground mb-5 md:mb-7">
-                Web apps that{" "}
-                <span className="gradient-text">scale with you</span>
+                Infrastructure that{" "}
+                <span className="gradient-text">never sleeps</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-7 md:mb-10">
-                From MVPs to enterprise SaaS — we build performant, secure, production-ready web applications your users will actually enjoy using.
+                Cloud architecture, CI/CD pipelines, and DevOps automation — built for reliability, scalability, and zero 3am surprises.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg gradient-bg text-white text-sm font-medium hover:opacity-90 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.97] transition-all">
-                  Discuss Your Project <ArrowRight size={15} />
+                  Discuss Your Infrastructure <ArrowRight size={15} />
                 </Link>
                 <Link href="/work" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary/50 hover:border-primary/30 active:scale-[0.97] transition-all">
                   See Our Work
@@ -108,7 +108,6 @@ export default function WebDevelopmentPage() {
             </ScrollReveal>
           </div>
         </div>
-        {/* Background gradient orb */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" aria-hidden="true" />
       </section>
 
@@ -117,17 +116,17 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">What It Is</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Full-stack web development, end to end</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Cloud & DevOps, built for production</h2>
           </ScrollReveal>
           <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
             <ScrollReveal delay={0.05}>
               <p>
-                Web development at amfire means owning the entire product surface — from the pixel-perfect UI your users interact with, to the APIs and databases that power it, to the cloud infrastructure it runs on. We don't hand off backend work to a third party or leave you hunting for a DevOps engineer after launch.
+                Cloud and DevOps work at amfire means building the foundation your product runs on — the infrastructure, deployment pipelines, monitoring, and security posture that determine whether your app is fast, reliable, and recoverable when something goes wrong. We treat infrastructure as code, which means it's version-controlled, repeatable, and auditable.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p>
-                We specialise in building products that start lean and grow gracefully. Whether that's a two-week MVP to test market demand, or a multi-tenant SaaS platform serving thousands of concurrent users — the architecture we choose on day one is designed to support where you're going, not just where you are today.
+                Whether you're launching a new product on AWS, containerising an existing monolith, or migrating to Kubernetes — we design for your current scale and build with your growth trajectory in mind. You get visibility into everything: uptime, latency, error rates, and cost, in a single dashboard.
               </p>
             </ScrollReveal>
           </div>
@@ -160,12 +159,12 @@ export default function WebDevelopmentPage() {
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">Decode the Stack</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Technologies we use</h2>
-            <p className="text-sm text-muted-foreground mb-8">Hover a tag to learn what it does in your stack.</p>
+            <p className="text-sm text-muted-foreground mb-8">The platforms and tools that keep your product online.</p>
           </ScrollReveal>
           <div className="flex flex-wrap gap-3">
             {stack.map((tech, i) => (
               <ScrollReveal key={tech.name} delay={i * 0.03}>
-                <span className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-primary/40 hover:bg-secondary/50 transition-all cursor-default">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-primary/40 hover:bg-secondary/50 transition-all cursor-default">
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: tech.color }} />
                   {tech.name}
                 </span>
@@ -180,7 +179,7 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">Case Studies</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8">Web apps we've shipped</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8">Infra projects we've delivered</h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {caseStudies.map((cs, i) => (
@@ -232,10 +231,10 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to build your web app?
+              Ready to harden your infrastructure?
             </h2>
             <p className="text-muted-foreground text-sm md:text-base mb-8 max-w-lg mx-auto">
-              Tell us what you're building — we'll scope it, price it, and start within a week.
+              Share your current setup and we'll identify the gaps and propose a DevOps roadmap.
             </p>
             <Link
               href="/contact"

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Smartphone, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Footer } from "@/components/layout/Footer";
+import { SubpageCaseStudyCarousel } from "@/components/home/SubpageCaseStudyCarousel";
 
 export const metadata: Metadata = {
   title: "Mobile Apps",

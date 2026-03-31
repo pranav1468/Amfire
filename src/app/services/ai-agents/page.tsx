@@ -1,78 +1,78 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Globe, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Brain, CheckCircle2 } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Footer } from "@/components/layout/Footer";
 import { SubpageCaseStudyCarousel } from "@/components/home/SubpageCaseStudyCarousel";
 
 export const metadata: Metadata = {
-  title: "Web Development",
-  description: "Custom web applications, SaaS platforms, e-commerce, and progressive web apps built with modern stacks.",
+  title: "AI & Agents",
+  description: "Custom AI agents, LLM integrations, RAG pipelines, and autonomous workflows built for production.",
 };
 
 const deliverables = [
-  "Custom SaaS platforms and multi-tenant web applications",
-  "E-commerce storefronts with payment gateway integration",
-  "Progressive Web Apps (PWAs) with offline capability",
-  "Internal tools, dashboards, and admin portals",
-  "RESTful and GraphQL APIs with documentation",
-  "CMS-powered marketing sites and landing pages",
-  "Real-time apps with WebSocket support (chat, notifications, live data)",
-  "Web portals with role-based access control",
+  "Custom LLM-powered chatbots and assistants (GPT-4o, Claude, Gemini)",
+  "Retrieval-Augmented Generation (RAG) pipelines over private data",
+  "Autonomous AI agents with tool use and multi-step reasoning",
+  "Document processing pipelines — OCR, extraction, summarisation",
+  "AI-powered search and recommendation systems",
+  "Fine-tuned models for domain-specific classification and generation",
+  "Voice agents with speech-to-text and text-to-speech",
+  "AI observability, eval frameworks, and cost tracking dashboards",
 ];
 
 const stack = [
-  { name: "Next.js", color: "#000" },
-  { name: "React", color: "#61DAFB" },
-  { name: "TypeScript", color: "#3178C6" },
-  { name: "Node.js", color: "#339933" },
+  { name: "OpenAI GPT-4o", color: "#412991" },
+  { name: "Claude 3.5", color: "#D97706" },
+  { name: "LangChain", color: "#1C3C3C" },
+  { name: "LlamaIndex", color: "#FF6B35" },
+  { name: "Pinecone", color: "#00D4AA" },
+  { name: "pgvector", color: "#336791" },
   { name: "FastAPI", color: "#009688" },
-  { name: "PostgreSQL", color: "#336791" },
-  { name: "MongoDB", color: "#47A248" },
-  { name: "Redis", color: "#DC382D" },
-  { name: "Tailwind CSS", color: "#06B6D4" },
-  { name: "AWS", color: "#FF9900" },
-  { name: "Vercel", color: "#000" },
-  { name: "Docker", color: "#2496ED" },
+  { name: "Python", color: "#3776AB" },
+  { name: "Whisper", color: "#412991" },
+  { name: "Weaviate", color: "#FA0050" },
+  { name: "Langfuse", color: "#6366F1" },
+  { name: "AWS Bedrock", color: "#FF9900" },
 ];
 
 const caseStudies = [
   {
-    title: "Clearpath — Construction SaaS",
-    desc: "Multi-tenant SaaS platform for construction project management with AI document processing, real-time notifications, and role-based dashboards for admins, site managers, and clients.",
-    tags: ["Next.js", "FastAPI", "PostgreSQL", "AWS"],
+    title: "Clearpath — AI Document Processing Agent",
+    desc: "An autonomous agent that reads construction permit PDFs, extracts key dates, obligations, and clauses, then populates structured records in the SaaS platform — replacing 4 hours of manual work per project.",
+    tags: ["GPT-4o", "LangChain", "Pinecone", "FastAPI"],
   },
   {
-    title: "Skillship — EdTech Platform",
-    desc: "Full-featured learning management system with course creation, student progress tracking, live cohort sessions, and Razorpay-powered enrollment flow.",
-    tags: ["Next.js", "Node.js", "MongoDB", "Razorpay"],
+    title: "TalentScout — AI Recruitment Assistant",
+    desc: "A RAG-based assistant that answers candidates' questions from a company's internal knowledge base, screens resumes against role requirements, and drafts shortlist summaries for hiring managers.",
+    tags: ["Claude", "LlamaIndex", "pgvector", "Python"],
   },
 ];
 
 const faqs = [
   {
-    q: "How long does a typical web application take to build?",
-    a: "A simple web app takes 3–6 weeks. A full SaaS platform with auth, billing, and dashboards typically takes 8–16 weeks depending on feature scope. We scope everything before we write a single line of code.",
+    q: "What's the difference between an AI integration and an AI agent?",
+    a: "An AI integration calls a model (like GPT-4o) to generate text or classify data in a fixed pipeline. An AI agent goes further — it can reason about a goal, decide which tools to call, take actions (send emails, query databases, browse the web), and iterate until the task is complete. We build both.",
   },
   {
-    q: "Do you handle both frontend and backend?",
-    a: "Yes — always. We build the full stack: UI, APIs, database schema, deployment, and DevOps. No partial handoffs.",
+    q: "How do you keep AI responses accurate and avoid hallucinations?",
+    a: "We use RAG (Retrieval-Augmented Generation) to ground responses in your actual data, structured output schemas to constrain model responses, and eval frameworks to measure accuracy before deployment. For production agents we also implement human-in-the-loop checkpoints for high-stakes actions.",
   },
   {
-    q: "Which tech stack do you use for web development?",
-    a: "Our default stack is Next.js + TypeScript on the frontend, and Node.js or FastAPI on the backend, with PostgreSQL or MongoDB. We adjust based on your scale and requirements.",
+    q: "Can you build AI features on top of our existing product?",
+    a: "Yes — this is the most common scenario. We connect to your existing database, APIs, and user context, and layer AI capabilities on top without a full rebuild.",
   },
   {
-    q: "Can you redesign or rebuild an existing product?",
-    a: "Yes. We regularly take over legacy codebases for rewrites or incremental modernisation. We audit the existing system first, then propose a migration path.",
+    q: "Which AI models do you work with?",
+    a: "Primarily OpenAI (GPT-4o, o1), Anthropic (Claude 3.5 Sonnet), and Google (Gemini 1.5 Pro). For latency-sensitive or cost-sensitive cases we also work with open-source models via AWS Bedrock or self-hosted Ollama.",
   },
   {
-    q: "Will I own the code after delivery?",
-    a: "Completely. You receive 100% of the source code, design files, and deployment credentials. We transfer all assets upon final payment milestone.",
+    q: "How do you handle the cost of running AI in production?",
+    a: "We implement caching, prompt compression, model routing (expensive models only for complex tasks), and observability dashboards so you can see cost per user/feature in real time. AI costs are always factored into our architecture recommendations.",
   },
 ];
 
-export default function WebDevelopmentPage() {
+export default function AiAgentsPage() {
   return (
     <>
       {/* Hero */}
@@ -81,25 +81,25 @@ export default function WebDevelopmentPage() {
           <div className="max-w-3xl">
             <ScrollReveal>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-xs font-medium text-muted-foreground mb-5">
-                <Globe size={12} className="text-primary" />
-                Web Development
+                <Brain size={12} className="text-primary" />
+                AI & Agents
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.05}>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight text-foreground mb-5 md:mb-7">
-                Web apps that{" "}
-                <span className="gradient-text">scale with you</span>
+                AI that works,{" "}
+                <span className="gradient-text">not just demos</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed mb-7 md:mb-10">
-                From MVPs to enterprise SaaS — we build performant, secure, production-ready web applications your users will actually enjoy using.
+                Production-ready AI agents, LLM pipelines, and RAG systems — built to run reliably on your data, at your scale, without hallucinating.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg gradient-bg text-white text-sm font-medium hover:opacity-90 hover:shadow-lg hover:shadow-primary/30 active:scale-[0.97] transition-all">
-                  Discuss Your Project <ArrowRight size={15} />
+                  Discuss Your AI Project <ArrowRight size={15} />
                 </Link>
                 <Link href="/work" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground text-sm font-medium hover:bg-secondary/50 hover:border-primary/30 active:scale-[0.97] transition-all">
                   See Our Work
@@ -108,7 +108,6 @@ export default function WebDevelopmentPage() {
             </ScrollReveal>
           </div>
         </div>
-        {/* Background gradient orb */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] pointer-events-none" aria-hidden="true" />
       </section>
 
@@ -117,17 +116,17 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">What It Is</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">Full-stack web development, end to end</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6">AI built for production, not prototypes</h2>
           </ScrollReveal>
           <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
             <ScrollReveal delay={0.05}>
               <p>
-                Web development at amfire means owning the entire product surface — from the pixel-perfect UI your users interact with, to the APIs and databases that power it, to the cloud infrastructure it runs on. We don't hand off backend work to a third party or leave you hunting for a DevOps engineer after launch.
+                AI development at amfire goes beyond calling an OpenAI API and streaming text to a chatbox. We design systems — retrieval pipelines that ground responses in your actual data, agents that can reason across multiple steps and use tools like database queries, web search, or email sending, and evaluation frameworks that measure accuracy before anything touches production.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <p>
-                We specialise in building products that start lean and grow gracefully. Whether that's a two-week MVP to test market demand, or a multi-tenant SaaS platform serving thousands of concurrent users — the architecture we choose on day one is designed to support where you're going, not just where you are today.
+                Every AI system we build is observable: you can see what the model was asked, what it retrieved, what it decided, and how much it cost — per request, per user, per feature. Because the difference between a compelling demo and a production AI product is everything that happens when the model gets it wrong.
               </p>
             </ScrollReveal>
           </div>
@@ -160,12 +159,12 @@ export default function WebDevelopmentPage() {
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">Decode the Stack</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">Technologies we use</h2>
-            <p className="text-sm text-muted-foreground mb-8">Hover a tag to learn what it does in your stack.</p>
+            <p className="text-sm text-muted-foreground mb-8">The models, frameworks, and infrastructure behind your AI product.</p>
           </ScrollReveal>
           <div className="flex flex-wrap gap-3">
             {stack.map((tech, i) => (
               <ScrollReveal key={tech.name} delay={i * 0.03}>
-                <span className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-primary/40 hover:bg-secondary/50 transition-all cursor-default">
+                <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card text-sm font-medium text-foreground hover:border-primary/40 hover:bg-secondary/50 transition-all cursor-default">
                   <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: tech.color }} />
                   {tech.name}
                 </span>
@@ -180,7 +179,7 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
           <ScrollReveal>
             <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-3">Case Studies</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8">Web apps we've shipped</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-8">AI systems we've shipped</h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {caseStudies.map((cs, i) => (
@@ -232,10 +231,10 @@ export default function WebDevelopmentPage() {
         <div className="container mx-auto px-4 sm:px-6 text-center max-w-2xl">
           <ScrollReveal>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to build your web app?
+              Ready to add AI to your product?
             </h2>
             <p className="text-muted-foreground text-sm md:text-base mb-8 max-w-lg mx-auto">
-              Tell us what you're building — we'll scope it, price it, and start within a week.
+              We'll audit your use case, recommend the right model and architecture, and build it production-ready.
             </p>
             <Link
               href="/contact"

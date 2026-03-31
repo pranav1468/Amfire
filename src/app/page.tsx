@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { ArrowRight, Brain } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Footer } from "@/components/layout/Footer";
 import { TrustedBy } from "@/components/home/TrustedBy";
 import { TestimonialsCarousel } from "@/components/home/TestimonialsCarousel";
 import { AnimatedTagline } from "@/components/home/AnimatedTagline";
 import { HeroBackground } from "@/components/home/HeroBackground";
-import { ServiceCard } from "@/components/home/ServiceCard";
 import { ServicesCarousel } from "@/components/home/ServicesCarousel";
+import { ServicesCarouselDesktop } from "@/components/home/ServicesCarouselDesktop";
+import { CaseStudyCarousel } from "@/components/home/CaseStudyCarousel";
 import { IndustryCard } from "@/components/home/IndustryCard";
 import { WhyAmfireCards } from "@/components/home/WhyAmfireCards";
 import { stats, services, differentiators, processSteps, industries } from "@/data/home";
@@ -173,7 +174,7 @@ export default function HomePage() {
             </p>
           </ScrollReveal>
 
-          {/* Mobile: one-card carousel */}
+          {/* Mobile: 1-card carousel */}
           <div className="md:hidden">
             <ServicesCarousel
               cards={services.map((s) => ({
@@ -185,18 +186,16 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Desktop: grid */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {services.map((service, i) => (
-              <ScrollReveal key={service.title} delay={i * 0.07} className="h-full">
-                <ServiceCard
-                  href={service.href}
-                  icon={<service.icon size={20} className="text-white" />}
-                  title={service.title}
-                  description={service.description}
-                />
-              </ScrollReveal>
-            ))}
+          {/* Desktop: 3-card sliding carousel */}
+          <div className="hidden md:block">
+            <ServicesCarouselDesktop
+              cards={services.map((s) => ({
+                href: s.href,
+                icon: <s.icon size={20} className="text-white" />,
+                title: s.title,
+                description: s.description,
+              }))}
+            />
           </div>
 
           <ScrollReveal delay={0.3}>
@@ -220,45 +219,7 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <div className="rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/25 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-              <div className="grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-5 sm:p-7 md:p-10 flex flex-col justify-center">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-5 md:mb-6 w-fit">
-                    <Brain size={12} />SaaS Platform + AI
-                  </div>
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 md:mb-4 leading-tight">
-                    Clearpath — Construction SaaS with AI document processing
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-5 md:mb-8 max-w-sm">
-                    A multi-tenant SaaS platform for construction firms to manage projects, contracts, and compliance — with an AI layer that reads and summarises permit documents automatically.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-5 md:mb-8">
-                    {["Next.js", "FastAPI", "PostgreSQL", "GPT-4o", "AWS"].map((t) => (
-                      <span key={t} className="px-2.5 py-1 rounded-full bg-secondary text-foreground text-xs font-medium border border-border">{t}</span>
-                    ))}
-                  </div>
-                  <Link href="/work" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors">
-                    View case study <ArrowRight size={14} />
-                  </Link>
-                </div>
-
-                {/* Visual placeholder — hidden on small mobile */}
-                <div className="relative hidden sm:flex min-h-48 lg:min-h-0 bg-secondary/50 items-center justify-center p-8">
-                  <div className="w-full max-w-xs space-y-3">
-                    {[85, 65, 92, 78].map((w, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg gradient-bg shrink-0" />
-                        <div className="flex-1 space-y-1.5">
-                          <div className="h-2.5 rounded-full bg-border" style={{ width: `${w}%` }} />
-                          <div className="h-2 rounded-full bg-border/50" style={{ width: `${w - 20}%` }} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="absolute bottom-4 right-4 text-xs text-muted-foreground">Clearpath dashboard</p>
-                </div>
-              </div>
-            </div>
+            <CaseStudyCarousel />
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>

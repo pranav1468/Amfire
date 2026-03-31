@@ -43,3 +43,16 @@ export interface Testimonial {
   role: string;
   stars: number;
 }
+
+export interface CaseStudy {
+  tag: string;
+  title: string;
+  description: string;
+  stack: string[];
+  href: string;
+  metric: string;
+  visual: {
+    widths: number[];
+    label: string;
+  };
+}
